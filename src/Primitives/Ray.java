@@ -1,5 +1,6 @@
 package Primitives;
 
+import java.util.List;
 import java.util.Objects;
 
 import static Primitives.Utile.isZero;
@@ -37,10 +38,13 @@ public class Ray {
         Ray ray = (Ray) o;
         return Objects.equals(p0, ray.p0) && Objects.equals(dir, ray.dir);
     }
-
+    public point3D findClosestPoint(List<point3D> point3DCollection){
+        return null;
+    }
     public point3D getPoint(double t){
         return isZero(t) ? p0 : (p0).add(dir.scale(t));
-    }    @Override
+    }
+    @Override
     public int hashCode() {
         return Objects.hash(p0, dir);
     }
