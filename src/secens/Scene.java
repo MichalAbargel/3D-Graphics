@@ -31,4 +31,20 @@ public class Scene {
         this.geometries = geometries;
         return this;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Color getBackground() {
+        return background;
+    }
+
+    public AmbientLight getAmbientLight() {
+        return ambientLight;
+    }
+
+    public Geometries getGeometries() {
+        return geometries;
+    }
 }

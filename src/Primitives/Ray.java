@@ -39,13 +39,26 @@ public class Ray {
         return Objects.equals(p0, ray.p0) && Objects.equals(dir, ray.dir);
     }
     public point3D findClosestPoint(List<point3D> point3DCollection){
-        return null;
+        point3D minP = null;
+
+        if(point3DCollection == null){
+            return null;
+        }
+
+        double distance = Double.POSITIVE_INFINITY;
+
+        for (point3D point:point3DCollection) {
+            double temp = point.distance(this.p0);
+            if(temp<distance){
+                distance=temp;
+                minP=point;
+            }
+        }
+        return minP;
     }
     public point3D getPoint(double t){
         return isZero(t) ? p0 : (p0).add(dir.scale(t));
     }
-    @Override
-    public int hashCode() {
-        return Objects.hash(p0, dir);
-    }
+
+
 }
