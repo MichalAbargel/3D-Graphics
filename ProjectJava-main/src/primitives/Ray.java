@@ -16,22 +16,36 @@ public class Ray {
     final Point3D _p0;
     final Vector _dir;
 
+    private static final double DELTA = 0.1;
+
 
     /**
      * Ray Vector must saved as normalize vector
      * Vector 0 will throw exception
      *
-     * @param p0  Point3D (x,y,z)
-     * @param dir Vector (x,y,z)
+     * @param head  Point3D (x,y,z)
+     * @param direction Vector (x,y,z)
      */
-    public Ray(Point3D p0, Vector dir) {
-        if (dir.equals(ZERO)) {
+    public Ray(Point3D head, Vector direction, Vector normal){
+        this._dir = direction.normalize();
+        if (direction.equals(ZERO)) {
             throw new IllegalArgumentException("Vector dir can't be point(0,0,0)");
         }
-        this._p0 = p0;
-        this._dir = dir.normalize();
+        if(direction.dotProduct(normal)<0)
+            this._p0=head.add(normal.scale(-DELTA));
+        else
+            this._p0=head.add(normal.scale(DELTA));
+
     }
 
+    public Ray(Point3D head, Vector direction){
+        if (direction.equals(ZERO)) {
+            throw new IllegalArgumentException("Vector dir can't be point(0,0,0)");
+        }
+        this._p0=head;
+        this._dir = direction.normalize();
+
+    }
     /**
      * getter.
      *

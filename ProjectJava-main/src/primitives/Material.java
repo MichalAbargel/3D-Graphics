@@ -1,6 +1,8 @@
 package primitives;
 
 
+import javax.print.DocFlavor;
+
 /**
  * @author Salay Shalom Shuker 311600605 salayshuker@gmail.com
  * @author Shimon Mizrahi 203375563 shimonshimi4@gmail.com
@@ -19,11 +21,33 @@ public class Material {
     public double _kD;
     public double _kS;
     public int _nShininess ;
+    public double kT;
+    public double kR;
+
+    public double getkT() {
+        return kT;
+    }
 
     /**
      * C-tor - default values 0
      */
-    public Material() { _kD = 0;_kS = 0;_nShininess = 0; }
+    public Material() {
+        _kD = 0;
+        _kS = 0;
+        _nShininess = 0;
+        kT=0;
+        kR=0;
+    }
+
+    public Material setkT(double kT) {
+        this.kT = kT;
+        return this;
+    }
+
+    public Material setkR(double kR) {
+        this.kR = kR;
+        return this;
+    }
 
     /**
      * Ctor Material. Note: kS+kD<=1. The variables kR & kT get a default value.

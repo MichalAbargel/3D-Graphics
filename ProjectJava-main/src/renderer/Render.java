@@ -1,8 +1,10 @@
 package renderer;
 
 import elements.Camera;
+import geometries.Intersectable;
 import primitives.Color;
 import primitives.Ray;
+import primitives.Vector;
 import scene.Scene;
 
 import java.util.MissingResourceException;
@@ -130,4 +132,5 @@ public class Render {
     public void writeToImage() {
         _imageWriter.writeToImage();
     }
+
 }

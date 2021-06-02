@@ -19,7 +19,7 @@ public class DirectionalLight extends Light implements LightSource{
      * @param intensity Intensity of Directional Light
      * @param dir   Direction of the Light - after normalized  -> Not change the current Vector
      */
-    protected DirectionalLight(Color intensity,Vector dir) {
+    public DirectionalLight(Color intensity, Vector dir) {
         super(intensity);
         _direction = dir.normalized();
     }
@@ -38,5 +38,12 @@ public class DirectionalLight extends Light implements LightSource{
      * @return Vector
      */
     @Override
-    public Vector getL(Point3D p) { return _direction; }
+    public Vector getL(Point3D p) {
+        return _direction.normalized();
+    }
+
+    @Override
+    public double getDistance(Point3D point) {
+        return Double.POSITIVE_INFINITY;
+    }
 }

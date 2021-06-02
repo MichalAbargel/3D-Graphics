@@ -1,4 +1,4 @@
-package renderer;
+package unittests;
 
 import static org.junit.jupiter.api.Assertions.*;
 //
@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Test;
 import elements.*;
 import geometries.*;
 import primitives.*;
+import renderer.ImageWriter;
+import renderer.RayTracerBasic;
+import renderer.Render;
 import scene.Scene;
 
 

@@ -1,9 +1,10 @@
 /**
  *
  */
-package geometries;
+package unittests;
 
 
+import geometries.Polygon;
 import org.junit.jupiter.api.Test;
 import primitives.*;
 

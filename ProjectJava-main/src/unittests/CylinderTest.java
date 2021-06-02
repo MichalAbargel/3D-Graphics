@@ -1,4 +1,4 @@
-package geometries;
+package unittests;
 
 import org.junit.jupiter.api.Test;
 import primitives.Point3D;

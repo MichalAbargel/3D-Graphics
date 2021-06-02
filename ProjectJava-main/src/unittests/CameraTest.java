@@ -1,7 +1,8 @@
 
-package elements;
+package unittests;
 
 
+import elements.Camera;
 import org.junit.jupiter.api.Test;
 import primitives.*;
 
