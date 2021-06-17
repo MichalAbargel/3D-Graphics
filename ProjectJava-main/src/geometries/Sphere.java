@@ -67,9 +67,13 @@ public class Sphere extends RadialGeometry  {
         Vector v = ray.getDir();
 
         if(_center.equals(P0)){
-            throw new IllegalArgumentException("ray can not be sphere center");
+            Point3D point=ray.getDir().scale(_radius)._head;
+            return List.of(new Point3D(point.getX(),point.getY(), point.getZ()));
+
         }
+
         Vector u = _center.subtract(P0);
+
 
         double tm = alignZero(u.dotProduct(v));
         double d = alignZero(Math.sqrt(u.lengthSquared()- tm * tm));
@@ -90,7 +94,7 @@ public class Sphere extends RadialGeometry  {
             return  List.of(P1,P2);
         }
 
-        else if (t2 >= 0 ){
+        else if (t2 > 0 ){
             Point3D P2 = P0.add(v.scale(t2));
             return List.of(P2);
         }
