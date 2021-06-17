@@ -4,9 +4,7 @@ import primitives.Color;
 import primitives.Point3D;
 import primitives.Vector;
 /**
- * This class represents spot light.
- * @author Salay Shalom Shuker 311600605 salayshuker@gmail.com
- * @author Shimon Mizrahi 203375563 shimonshimi4@gmail.com
+
  */
 
 
