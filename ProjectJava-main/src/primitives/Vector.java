@@ -49,8 +49,8 @@ public class Vector {
     }*/
 
     /* dotProduct
-    * return ((u1 * v1) + (u2 * v2) + (u3 * v3))
-    *  */
+     * return ((u1 * v1) + (u2 * v2) + (u3 * v3))
+     *  */
     public double dotProduct(Vector v) {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
@@ -110,13 +110,14 @@ public class Vector {
         double v2 = v._y.get();
         double v3 = v._z.get();
         if(isZero(u1-v1)&&(isZero(u2-v2)&&(isZero(u3-v3))))
-                throw new IllegalArgumentException("vector head can not be (0,0,0)");
+            throw new IllegalArgumentException("vector head can not be (0,0,0)");
         return (new Vector(
                 u1 - v1,
                 u2 - v2,
                 u3 - v3
         ));
     }
+
 
     /* scale
      * multiplication vector with number return vector with new parameters
@@ -179,7 +180,7 @@ public class Vector {
         return new Vector(this._head).normalize();
     }
 
-/* this function compare if the 2 vectors are equal. */
+    /* this function compare if the 2 vectors are equal. */
 
     @Override
     public boolean equals(Object o) {
