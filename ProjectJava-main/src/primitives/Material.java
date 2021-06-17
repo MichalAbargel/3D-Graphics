@@ -4,8 +4,7 @@ package primitives;
 import javax.print.DocFlavor;
 
 /**
- * @author Salay Shalom Shuker 311600605 salayshuker@gmail.com
- * @author Shimon Mizrahi 203375563 shimonshimi4@gmail.com
+
  */
 
 
@@ -18,9 +17,9 @@ public class Material {
      */
 
 
-    public double _kD;
-    public double _kS;
-    public int _nShininess ;
+    public double _kD;//diffuse
+    public double _kS;//specular
+    public int _nShininess ;//Shininess
     public double kT;
     public double kR;
 
@@ -39,11 +38,21 @@ public class Material {
         kR=0;
     }
 
+    /**
+     * setkT Material
+     * @param kT
+     * @return this Material
+     */
     public Material setkT(double kT) {
         this.kT = kT;
         return this;
     }
 
+    /**
+     * setkR Material
+     * @param kR double kR
+     * @return this Material
+     */
     public Material setkR(double kR) {
         this.kR = kR;
         return this;
@@ -59,7 +68,7 @@ public class Material {
 
      /**
      * set of kD
-     * @param kD
+     * @param kD double kD
      * @return this Material
      */
     public Material setKd(double kD) {
@@ -69,7 +78,7 @@ public class Material {
 
     /**
      * set of kS
-     * @param kS
+     * @param kS double kS
      * @return this Material
      */
     public Material setKs(double kS) {

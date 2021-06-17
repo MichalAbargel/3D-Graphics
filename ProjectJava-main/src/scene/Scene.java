@@ -8,9 +8,6 @@ import java.util.List;
 
 /**
  * This Class represent Scene - A complete set of objects that build image
- *
- * @author Salay Shalom Shuker 311600605 salayshuker@gmail.com
- * @author Shimon Mizrahi 203375563 shimonshimi4@gmail.com
  */
 
 public class Scene {

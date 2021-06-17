@@ -7,8 +7,7 @@ import primitives.Vector;
 /**
  * This Class represent a Point Light.
  * the lights up at 360 degrees - no direction.
- * @author Salay Shalom Shuker 311600605 salayshuker@gmail.com
- * @author Shimon Mizrahi 203375563 shimonshimi4@gmail.com
+
  */
 
 

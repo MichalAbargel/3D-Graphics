@@ -8,10 +8,7 @@ import java.util.List;
 
 import static primitives.Util.alignZero;
 
-/**
- * @author Salay Shalom Shuker 311600605 salayshuker@gmail.com
- * @author Shimon Mizrahi 203375563 shimonshimi4@gmail.com
- */
+
 
 public class RayTracerBasic extends RayTracerBase {
 
@@ -110,6 +107,7 @@ public class RayTracerBasic extends RayTracerBase {
         return color;
 
     }
+
 
     private Color calcGlobalEffects(GeoPoint gp, Vector v, int level, double k) {
         Color color = Color.BLACK; Vector n = gp.geometry.getNormal(gp.point);

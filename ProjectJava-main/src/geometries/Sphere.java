@@ -12,22 +12,31 @@ import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
 
-/* class present a sphere */
-
+/**
+ * class present a sphere
+ */
 public class Sphere extends RadialGeometry  {
 
     final Point3D _center;
 
-    /* Constructor */
 
+
+    /**
+     * Constructor
+     * @param radius
+     * @param center
+     */
     public Sphere( double radius , Point3D center) {
         super(radius);
         _center = center;
 
     }
 
-    /* Getter */
 
+    /**\
+     * Getter
+     * @return center
+     */
     private Point3D getCenter() {
         return _center;
     }
@@ -48,8 +57,13 @@ public class Sphere extends RadialGeometry  {
         return Double.compare(sphere._radius, _radius) == 0 && _center.equals(sphere._center);
     }
 
-    /* normal vector of a Sphere */
 
+
+    /**
+     *
+     * @param point
+     * @return normal vector of a Sphere
+     */
     public Vector getNormal(Point3D point) {
         if (point.equals(_center)) {
             throw new IllegalArgumentException("point is can not to be 0");
@@ -58,8 +72,12 @@ public class Sphere extends RadialGeometry  {
         return n.normalized();
     }
 
-    /* Operations */
-    /*list that get ray and find all the intersections with the sphere   */
+
+    /**
+     * Operations
+     * @param ray list that get ray
+     * @return  all the intersections with the sphere
+     */
     @Override
     public List<Point3D> findIntersections(Ray ray) {
         List<Point3D> result = null;

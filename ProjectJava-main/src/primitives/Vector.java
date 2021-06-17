@@ -21,22 +21,40 @@ public class Vector {
     public Point3D getHead() {
         return _head;
     }
-    /* Constructor */
 
+
+    /**
+     * Constructor
+     * @param head Point3D head of the vector
+     */
     public Vector(Point3D head) {
         if (head.equals(Point3D.ZERO)) {
             throw new IllegalArgumentException("vector head can not be (0,0,0)");
         }
         _head = head;
     }
-    /* Constractor vector with Coordinate*/
+
+
+    /**
+     * Constractor
+     * @param x vector with Coordinate x
+     * @param y vector with Coordinate y
+     * @param z vector with Coordinate z
+     */
     public Vector(Coordinate x, Coordinate y, Coordinate z) {
         _head = new Point3D(x.coord, y.coord, z.coord);
         if (_head.equals(Point3D.ZERO)) {
             throw new IllegalArgumentException("vector head can not be (0,0,0)");
         }
     }
-    /* Constractor vector with double*/
+    /* Constractor */
+
+    /**
+     * Constractor
+     * @param x vector with double -x
+     * @param y vector with double -y
+     * @param z  vector with double -z
+     */
     public Vector(double x, double y, double z) {
         _head = new Point3D(x, y, z);
         if (_head.equals(Point3D.ZERO)) {
@@ -49,8 +67,14 @@ public class Vector {
     }*/
 
     /* dotProduct
-     * return ((u1 * v1) + (u2 * v2) + (u3 * v3))
+     * return
      *  */
+
+    /**
+     * dotProduct
+     * @param v Vector to do with him dotProduct
+     * @return ((u1 * v1) + (u2 * v2) + (u3 * v3))
+     */
     public double dotProduct(Vector v) {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
@@ -63,10 +87,12 @@ public class Vector {
     }
 
 
-    /* crossProduct
-     * return new Vector from 2 vectors
-     *  */
 
+    /**
+     * crossProduct
+     * @param v Vector to do with him crossProduct
+     * @return new Vector from 2 vectors
+     */
     public Vector crossProduct(Vector v) {
 
         double u1 = _head._x.coord;
@@ -85,6 +111,12 @@ public class Vector {
     /* Add
      * return add 2 vectors to new vector
      *  */
+
+    /**
+     * Add
+     * @param v  Vector to add
+     * @return add 2 vectors to new vector
+     */
     public Vector add(Vector v) {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
@@ -99,9 +131,12 @@ public class Vector {
                 u3 + v3
         ));
     }
-    /* subtract
-     * return subtract one vector from second vector to new vector
-     *  */
+
+    /**
+     * subtract
+     * @param v
+     * @return subtract one vector from second vector to new vector
+     */
     public Vector subtract(Point3D v) {
         double u1 = _head._x.get();
         double u2 = _head._y.get();
@@ -118,11 +153,11 @@ public class Vector {
         ));
     }
 
-
-    /* scale
-     * multiplication vector with number return vector with new parameters
-     *  */
-
+    /**
+     * scale
+     * @param t multiplication vector with number
+     * @return  ector with new parameters
+     */
     public Vector scale(double t) {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
@@ -132,10 +167,11 @@ public class Vector {
 
     }
 
-    /* lengthSquared
-     * return the length of vector squared
-     *  */
 
+    /**
+     * lengthSquared
+     * @return the length of vector squared
+     */
     public double lengthSquared() {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
@@ -144,18 +180,19 @@ public class Vector {
         return ((u1 * u1) + (u2 * u2) + (u3 * u3));
     }
 
-    /* length
-     * return the length of vector
-     *  */
 
+    /**
+     * length
+     * @return  the length of vector
+     */
     public double length() {
         return (Math.sqrt(lengthSquared()));
     }
 
-    /* normalize
-     * return vector normalize
-     *  */
-
+    /**
+     * normalize
+     * @return vector normalize
+     */
     public Vector normalize() {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
@@ -172,16 +209,22 @@ public class Vector {
     }
 
 
-    /* normalized
-     * return vector normalized
-     *  */
 
+    /**
+     * normalized
+     * @return vector normalized
+     */
     public Vector normalized() {
         return new Vector(this._head).normalize();
     }
 
     /* this function compare if the 2 vectors are equal. */
 
+    /**
+     * this function compare if the 2 vectors are equal
+     * @param o
+     * @return equal Vector
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

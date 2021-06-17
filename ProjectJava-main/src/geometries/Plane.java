@@ -15,8 +15,14 @@ public class Plane extends Geometry{
     protected final Vector _noraml;
     protected final Point3D _q0;
 
-    /* Constructors */
 
+
+    /**
+     * Constructors
+     * @param p1 Point3D p1
+     * @param p2 Point3D p2
+     * @param p3 Point3D p3
+     */
     public Plane(Point3D p1, Point3D p2, Point3D p3) {
         _q0 = p1;
 
@@ -29,7 +35,14 @@ public class Plane extends Geometry{
 
 
     }
-    /* constructor build a plane from a single point and a vector that will be normalized */
+
+
+    /**
+     * constructor
+     * build a plane from a single point and a vector that will be normalized
+     * @param noraml
+     * @param q0
+     */
     public Plane(Vector noraml, Point3D q0) {
         _noraml = noraml.normalized();
         _q0 = q0;
@@ -81,8 +94,8 @@ public class Plane extends Geometry{
 
     /**
      *
-     * @param ray
-     * @return
+     * @param ray ray
+     * @return Collection of points of intersection with the rays
      */
     @Override
     public List<GeoPoint> findGeoIntersections(Ray ray) {

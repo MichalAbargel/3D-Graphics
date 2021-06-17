@@ -4,10 +4,7 @@ import primitives.Color;
 import primitives.Point3D;
 import primitives.Vector;
 
-/**
- * @author Salay Shalom Shuker 311600605 salayshuker@gmail.com
- * @author Shimon Mizrahi 203375563 shimonshimi4@gmail.com
- */
+
 
 public class DirectionalLight extends Light implements LightSource{
 

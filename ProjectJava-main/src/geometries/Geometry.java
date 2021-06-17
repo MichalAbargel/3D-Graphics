@@ -45,6 +45,7 @@ public abstract class Geometry implements Intersectable {
     /**
      * Default Ctor: init _emision to Black and init Material with default value
      */
+
     public Geometry() {
         this(Color.BLACK);
     }

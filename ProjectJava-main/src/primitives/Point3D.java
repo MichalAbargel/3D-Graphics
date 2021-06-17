@@ -3,9 +3,13 @@ package primitives;
 import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
-/*  this class represent a point for 3 dimensions X, Y and Z */
-public class Point3D {
 
+
+/**
+ * his class represent a point for 3 dimensions X, Y and Z
+ */
+public class Point3D {
+//3 coordinates to represent a point
     final Coordinate _x;
     final Coordinate _y;
     final Coordinate _z;
@@ -13,19 +17,35 @@ public class Point3D {
     public static Point3D ZERO = new Point3D(0d, 0d, 0d);
     public Point3D _head;
 
-    /* Constructor Point3D with Coordinate*/
+    /**
+     *
+     * @param x Coordinate of a point
+     * @param y Coordinate of a point
+     * @param z Coordinate of a point
+     */
     public Point3D(Coordinate x, Coordinate y, Coordinate z) {
         this(x.coord, y.coord, z.coord);
     }
 
-    /* Constructor Point3D with double*/
+
+    /**
+     * Constructor
+     * @param x Constructor Point3D with double
+     * @param y Constructor Point3D with double
+     * @param z Constructor Point3D with double
+     */
     public Point3D(double x, double y, double z) {
         _x = new Coordinate(alignZero(x));
         _y = new Coordinate(alignZero(y));
         _z = new Coordinate(alignZero(z));
     }
 
-    /* Getters */
+
+
+    /**
+     * Getters
+     * @return X or Y or Z
+     */
     public Coordinate getX() {
         return _x;
     }
@@ -38,9 +58,11 @@ public class Point3D {
         return _z;
     }
 
-    //this function compare between 2 Point3D, if they are equal the function return 0(zero)
-    //and -1(minus 1) if they aren't equal
-
+    /**
+     * this function compare between 2 Point3D, if they are equal the function
+     * @param o the Object
+     * @return 0(zero) and -1(minus 1) if they aren't equal
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -80,10 +102,11 @@ public class Point3D {
     }
 
 
-    /* subtract
-     * get 2 Point3D objects and return new vector
-     *  */
-
+    /**
+     * subtract
+     * @param pt2  get 2 Point3D objects
+     * @return new vector
+     */
     public Vector subtract(Point3D pt2) {
         if (pt2.equals(this)) {
             throw new IllegalArgumentException("vector can not (0,0,0)");
@@ -95,9 +118,13 @@ public class Point3D {
         ));
     }
 
-    /* add
-     * add Point3D to vector and return new Point3D
-     *  */
+
+
+    /**
+     * add
+     * @param vector add Point3D to vector
+     * @return new Point3D
+     */
     public Point3D add(Vector vector) {
 
         return (new Point3D(

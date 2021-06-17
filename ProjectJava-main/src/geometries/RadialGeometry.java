@@ -18,7 +18,10 @@ public abstract class RadialGeometry extends Geometry {
         _radius = radius;
     }
 
-    /* Getter */
+    /**
+     * Getters
+     * @return radius
+     */
 
     private double getRadius() {
         return _radius;

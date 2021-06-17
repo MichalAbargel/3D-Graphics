@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.MissingResourceException;
 
 /**
-
+ *This class renders the picture clearer
  */
 
 public class Render {
@@ -219,7 +219,11 @@ public class Render {
 
     }
 
-
+    /**
+     * Improve performance by examining 4 pixel corners
+     * @param rays
+     * @return color
+     */
     private Color calcColor(List<Ray> rays){
         Color C1=_rayTracerBase.traceRay(rays.get(0));
         Color C2= _rayTracerBase.traceRay(rays.get(_camera.SuperSamplingNumber-1));

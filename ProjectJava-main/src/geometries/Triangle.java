@@ -17,7 +17,17 @@ public class Triangle extends Polygon {
 
 
     /* Constructors */
-    //constructor that receive tree points and Initializing the tree point of the triangle with their values
+
+    //
+
+    /**
+     * Constructors
+     * constructor that receive tree points and Initializing the tree point of the
+     * triangle with their values
+     * @param p1 Point3D
+     * @param p2 Point3D
+     * @param p3 Point3D
+     */
     public Triangle(Point3D p1, Point3D p2, Point3D p3)
     {
         super(p1,p2,p3);
@@ -27,7 +37,10 @@ public class Triangle extends Polygon {
     }
 
 
-    /* copy constructor (receive a triangle and copy your values to ""this.Triangle"") */
+    /**
+     * copy constructor (receive a triangle and copy your values to ""this.Triangle"")
+     * @param copy
+     */
     public Triangle(Triangle copy) {
         this._p1 = new Point3D(copy._p1.getX(),copy._p1.getY(),copy._p1.getZ());
         this._p2 = new Point3D(copy._p2.getX(),copy._p2.getY(),copy._p2.getZ());
@@ -36,24 +49,40 @@ public class Triangle extends Polygon {
 
 
 
-    /* Getters */
 
 
+    /**
+     * Getters
+     * @return a new Point3D with the value of this._p1
+     */
     public Point3D getP1() {
         return new Point3D(_p1.getX(), _p1.getY(), _p1.getZ());
-    }//return a new Point3D with the value of this._p1
+    }
+    /**
+     * Getters
+     * @return return a new Point3D with the value of this._p2
+     */
     public Point3D getP2() {
         return new Point3D(_p2.getX(), _p2.getY(), _p2.getZ());
-    }//return a new Point3D with the value of this._p2
+    }
+
+    /**
+     * Getters
+     * @return a new Point3D with the value of this._p3
+     */
     public Point3D getP3() {
-        return new Point3D(_p3.getX(), _p3.getY(), _p3.getZ());  }//return a new Point3D with the value of this._p3
+        return new Point3D(_p3.getX(), _p3.getY(), _p3.getZ());  }
 
 
 
 
 
-    /* ray that insert the object and return list of Intersections */
 
+
+    /**
+     * @param ray ray that insert the object
+     * @return list of Intersections
+     */
     @Override
     public List<Point3D> findIntersections(Ray ray) {
         List<Point3D> intersections = plane.findIntersections(ray);

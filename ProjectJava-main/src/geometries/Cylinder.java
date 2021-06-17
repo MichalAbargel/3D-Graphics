@@ -12,15 +12,24 @@ public class Cylinder extends Tube {
     protected
     double height;
 
-    /* Constructor */
 
+    /**
+     * Constructor
+     * @param height cylinder height
+     * @param r Ray
+     * @param radius
+     */
     private Cylinder(double height, Ray r, double radius) {
         super(radius, r);
         this.height = height;
     }
 
-    /* Getter */
 
+
+    /**
+     * Getter
+     * @return height
+     */
     private double getHeight() {
         return height;
     }

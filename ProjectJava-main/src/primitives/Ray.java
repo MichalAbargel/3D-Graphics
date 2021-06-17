@@ -13,7 +13,7 @@ import static primitives.Point3D.ZERO;
  */
 public class Ray {
 
-    final Point3D _p0;
+    final Point3D _p0;//starting point
     final Vector _dir;
 
     private static final double DELTA = 0.1;
