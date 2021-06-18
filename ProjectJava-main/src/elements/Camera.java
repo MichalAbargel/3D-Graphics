@@ -15,7 +15,13 @@ import static primitives.Util.isZero;
 
 public class Camera {
 
-    public static  int SuperSamplingNumber=3;
+    public   int SuperSamplingNumber=3; // Default
+
+    public  Camera setSuperSamplingNumber(int superSamplingNumber) {
+        this.SuperSamplingNumber = superSamplingNumber;
+        return this;
+    }
+
     Point3D _p0;
     Vector _vTo;
     Vector _vUp;
@@ -26,12 +32,8 @@ public class Camera {
     private double _height;
     private double _distance;       // distance between camera and the view plane
 
+    /* Getters */
 
-
-    /**
-     * Getters
-     * @return _p0 or _vTo or _vUp or _vRight or _height or _distance
-     */
     private Point3D getP0() {
         return _p0;
     }
@@ -80,9 +82,9 @@ public class Camera {
     }
 
     /**
-     * @param width set width
-     * @param height set height
-     * @return ViewPlaneSize
+     * @param width
+     * @param height
+     * @return
      */
     public Camera setViewPlaneSize(double width, double height) {
         _width = width;
@@ -91,11 +93,6 @@ public class Camera {
     }
     /*  function distance */
 
-    /**
-     * function distance
-     * @param distance
-     * @return distance
-     */
     public Camera setDistance(double distance) {
         try {
             if (isZero(distance)) {
@@ -108,14 +105,7 @@ public class Camera {
         }
         return this;
     }
-    /**
-     *constructing a ray passing through pixel(i,j) of the view plane
-     * @param nX
-     * @param nY
-     * @param j
-     * @param i
-     * @return
-     */
+    /*  function that create ray with point */
 
     public Ray constructRayThroughPixel(int nX, int nY, int j, int i) {
 
@@ -174,14 +164,6 @@ public class Camera {
         return new Ray(_p0,p.subtract(_p0).normalize());
     }
 
-    /**
-     * geterrs
-     * @param nX
-     * @param nY
-     * @param j
-     * @param i
-     * @return
-     */
 
     public Point3D getCenterOfPixel(int nX, int nY, int j, int i){
         Point3D pc = _p0.add(_vTo.scale(_distance));
